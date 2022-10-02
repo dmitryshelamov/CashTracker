@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CashTracker.MAUI.MainPage">
+
+    <Grid
+        RowDefinitions="*" ColumnDefinitions="*, 2*">
+        <StackLayout Grid.Row="0" Grid.Column="0" BackgroundColor="LightBlue">
+            <Label
+                Text="{Binding ProfileDetails}"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="{Binding Balance}"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+        </StackLayout>
+        <ScrollView Grid.Row="0" Grid.Column="1" BackgroundColor="LightGreen">
+
+
+            <!-- <ListView ItemsSource="{Binding Operations}"> -->
+            <!--     <ListView.ItemTemplate> -->
+            <!--         <DataTemplate> -->
+            <!--             <ViewCell> -->
+            <!--                 <Grid RowDefinitions="*" ColumnDefinitions="*, *, *, *, *, *, *, *"> -->
+            <!--                     <Label Grid.Column="0" Text="{Binding Line}"/> -->
+            <!--                     <Label Grid.Column="1" Text="{Binding OperationDate}"/> -->
+            <!--                     <Label Grid.Column="2" Text="{Binding CardNumber}"/> -->
+            <!--                     <Label Grid.Column="3" Text="{Binding OperationAmount}"/> -->
+            <!--                     <Label Grid.Column="4" Text="{Binding Currency}"/> -->
+            <!--                     <Label Grid.Column="5" Text="{Binding Category}"/> -->
+            <!--                     <Label Grid.Column="6" Text="{Binding MCC}"/> -->
+            <!--                     <Label Grid.Column="7" Text="{Binding Description}"/> -->
+            <!--                 </Grid> -->
+            <!--             </ViewCell> -->
+            <!--         </DataTemplate> -->
+            <!--     </ListView.ItemTemplate> -->
+            <!-- </ListView> -->
+
+
+            <CollectionView ItemsSource="{Binding Operations}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+
+                        <Grid RowDefinitions="Auto" ColumnDefinitions="*, 2*, *, *, *, 2*, *, 3*">
+                            <Label LineBreakMode="WordWrap" Grid.Column="0" Text="{Binding Line}"/>
+                            <Label LineBreakMode="WordWrap" Grid.Column="1" Text="{Binding OperationDate}" />
+                            <Label LineBreakMode="WordWrap" Grid.Column="2" Text="{Binding CardNumber}"/>
+                            <Label LineBreakMode="WordWrap" Grid.Column="3" Text="{Binding OperationAmount}"/>
+                            <Label LineBreakMode="WordWrap" Grid.Column="4" Text="{Binding Currency}"/>
+                            <Label LineBreakMode="WordWrap" Grid.Column="5" Text="{Binding Category}"/>
+                            <Label LineBreakMode="WordWrap" Grid.Column="6" Text="{Binding MCC}"/>
+                            <Label LineBreakMode="WordWrap" LineHeight="2" Grid.Column="7" Text="{Binding Description}"/>
+                            </Grid>
+                  
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+
+
+        </ScrollView>
+    </Grid>
+
+    <!-- <StackLayout Margin="20"> -->
+    <!--     <ListView ItemsSource="{Binding Operations}"> -->
+    <!--         <ListView.ItemTemplate> -->
+    <!--             <DataTemplate> -->
+    <!--                 <ViewCell> -->
+    <!--                     <Grid Padding="10"> -->
+    <!--                         <Grid.RowDefinitions> -->
+    <!--                             <RowDefinition Height="Auto" /> -->
+    <!--                         </Grid.RowDefinitions> -->
+    <!--                         <Grid.ColumnDefinitions> -->
+    <!--                             <ColumnDefinition Width="Auto" /> -->
+    <!--                             <ColumnDefinition Width="Auto" /> -->
+    <!--                         </Grid.ColumnDefinitions> -->
+    <!--                         <Label Grid.Column="1" Text="{Binding Id}" Margin="20"/> -->
+    <!--                         <Label Grid.Column="1" Text="{Binding DateTime}"/> -->
+    <!--                     </Grid> -->
+    <!--                 </ViewCell> -->
+    <!--             </DataTemplate> -->
+    <!--         </ListView.ItemTemplate> -->
+    <!--     </ListView> -->
+    <!-- </StackLayout> -->
+
+</ContentPage>
